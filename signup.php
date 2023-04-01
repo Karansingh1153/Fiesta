@@ -1,6 +1,6 @@
 <?php
-include('./include/head.php');
-include('./include/loading.php');
+include('./common/include/head.php');
+include('./common/include/loading.php');
 ?>
 
 <div class="load">
@@ -48,13 +48,13 @@ include('./include/loading.php');
                         if (!isset($_GET['verifiy'])) {
                         ?>
 
-                            <div class="py-3 px-3">
+                            <div class="py-3 px-5">
                                 <input type="text" name="username" id="username" pattern="[A-Za-z0-9_]{2,20}" class="w-100" required placeholder="Username">
                                 <input type="email" class="my-3 w-100" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Email">
                                 <input type="password" name="password" id="password" class="w-100" required placeholder="Password">
                                 <input type="password" class="my-3 w-100" name="cpassword" required id="cpassword" placeholder="Confirm Password">
                                 <div class="mx-auto d-flex justify-content-center">
-                                    <button class="btn my-2" type="submit">Signup</button>
+                                    <button class="btn my-3" type="submit">Signup</button>
                                 </div>
                                 <a class="d-flex justify-content-center mt-3 same-a" href="login.php">Already have account? Login</a>
                             </div>
@@ -78,5 +78,5 @@ include('./include/loading.php');
 </div>
 
 <?php
-include('./include/scripts.php');
+include('./common/include/scripts.php');
 ?>
