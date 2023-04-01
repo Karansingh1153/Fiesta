@@ -1,0 +1,35 @@
+@import url("../css/global.css");
+
+.organize {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  flex-direction: column;
+}
+
+.organize a {
+  text-decoration: none;
+  background-color: white;
+  color: var(--orange);
+  border: solid 2px var(--orangeExtraDark);
+  padding: 4rem;
+  border-radius: 10px;
+  transition: ease all 0.6s;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+}
+
+.organize a:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px var(--extraSixth);
+  transform: translateY(10px);
+}
+
+.hero-creator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

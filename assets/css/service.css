@@ -1,0 +1,9 @@
+@import url("../css/global.css");
+
+.service-div {
+  background-color: var(--orange);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  margin: 0.1rem 0.2rem 1rem 0.2rem;
+}
