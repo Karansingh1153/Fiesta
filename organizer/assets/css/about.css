@@ -1,0 +1,25 @@
+@import url("./global.css");
+
+.about {
+  background-color: var(--extraEight);
+  padding: 5rem;
+}
+
+.about-circle-small {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  background-color: var(--orange);
+}
+.about-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: var(--orangeDark);
+}
+.about-circle-big {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: var(--orangeExtraDark);
+}

@@ -1,0 +1,179 @@
+@import url("./global.css");
+
+.form {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.sign-up,
+.login {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  color: var(--extraFourth);
+  letter-spacing: 0.1rem;
+  font-family: "Mukta Vaani", sans-serif;
+}
+
+form {
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px #d0d0d0, -5px -5px 20px #f0f0f0;
+}
+
+input[type="text"] {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-bottom: solid 2px var(--extraSixth);
+  transition: ease all 0.4s;
+}
+
+input[type="text"]:hover {
+  border-bottom: solid 2px var(--orangeLight);
+}
+
+input[type="text"]:focus-visible {
+  outline: none;
+}
+
+input[type="email"] {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-bottom: solid 2px var(--extraSixth);
+  transition: ease all 0.4s;
+}
+
+input[type="email"]:hover {
+  border-bottom: solid 2px var(--orangeLight);
+}
+
+input[type="email"]:focus-visible {
+  outline: none;
+}
+
+input[type="password"] {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-bottom: solid 2px var(--extraSixth);
+  transition: ease all 0.4s;
+}
+
+input[type="password"]:focus-visible {
+  outline: none;
+}
+
+input[type="password"]:hover {
+  border-bottom: solid 2px var(--orangeLight);
+}
+
+input[type="submit"]:active {
+  background-color: var(--orange);
+  color: white;
+}
+
+input::placeholder {
+  transition: ease all 0.5s;
+  color: var(--extraSixth);
+  font-weight: 600;
+  -webkit-transition: ease all 0.5s;
+  -moz-transition: ease all 0.5s;
+}
+
+input:hover::placeholder {
+  font-size: 0.9rem;
+}
+
+.login_extra .bi {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.65);
+  transition: color ease 0.7s;
+  position: relative;
+}
+
+.login_extra .bi::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  filter: blur(4px);
+  background-color: black;
+}
+
+.login_extra .bi:hover {
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.btn {
+  color: white;
+  background-color: var(--orange);
+  padding: 0.5rem 3rem;
+  border-radius: 0%;
+  letter-spacing: 0.05rem;
+  border: solid 0.2rem var(--coralLight);
+  transition: ease all 0.5s;
+  position: relative;
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--orangeDark);
+  border: solid 0.2rem var(--orange);
+}
+
+.role {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--extraFourth);
+  border: none;
+  background-color: white;
+  padding: 0.6rem 0rem;
+  border-bottom: 2px solid white;
+  transition: ease all 0.5s;
+  gap: 1rem;
+}
+
+.role label:hover {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px var(--extraFourth);
+  border-radius: 100%;
+  width: 1rem;
+  height: 1rem;
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--orange);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.role:nth-child(1) {
+  border-top-left-radius: 5px;
+}
+
+.role:nth-child(2) {
+  border-top-right-radius: 5px;
+}

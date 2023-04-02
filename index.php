@@ -22,5 +22,4 @@ include('./common/include/loading.php');
   ?>
   <a href="#top" class="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
 
-
 </div>

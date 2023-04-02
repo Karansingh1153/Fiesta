@@ -1,0 +1,21 @@
+@import url("./global.css");
+
+.quote-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.quote-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bi-quote {
+  transform: rotate(180deg);
+  color: var(--orange);
+  font-size: 5rem;
+}
+
+.rotate {
+  transform: rotate(0deg);
+}

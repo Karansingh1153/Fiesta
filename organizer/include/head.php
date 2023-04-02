@@ -11,20 +11,19 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./common/assets/css/global.css" />
-    <link rel="stylesheet" href="./common/assets/css/header.css" />
-    <link rel="stylesheet" href="./common/assets/css/footer.css" />
-    <link rel="stylesheet" href="./common/assets/css/form.css" />
-    <link rel="stylesheet" href="./common/assets/css/home.css" />
-    <link rel="stylesheet" href="./common/assets/css/loading.css" />
-    <link rel="stylesheet" href="./common/assets/css/service.css" />
-    <link rel="stylesheet" href="./common/assets/css/pricing.css" />
-    <link rel="stylesheet" href="./common/assets/css/gallery.css" />
-    <link rel="stylesheet" href="./common/assets/css/about.css" />
-    <link rel="stylesheet" href="./common/assets/css/contact.css" />
-    <link rel="stylesheet" href="./common/assets/css/review.css" />
-    <link rel="stylesheet" href="./common/assets/css/organize.css" />
-    <link rel="stylesheet" href="./common/assets/css/universityFest.css" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/loading.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/pricing.css" />
+    <link rel="stylesheet" href="assets/css/gallery.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/review.css" />
+    <link rel="stylesheet" href="assets/css/organizer.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 

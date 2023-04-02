@@ -1,0 +1,26 @@
+@import url("../css/global.css");
+
+.price-span {
+  font-size: 4rem;
+  color: var(--orangeExtraDark);
+}
+
+.last-price-span {
+  font-size: 2rem;
+}
+
+.price-symbol {
+  font-size: 1rem;
+}
+
+.card-text {
+  padding: 1rem;
+}
+
+.bi-check {
+  color: green;
+}
+
+.bi-x {
+  color: red;
+}

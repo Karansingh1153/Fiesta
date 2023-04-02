@@ -46,7 +46,7 @@ if (isset($_POST['email'])) {
             $mail->Port = 587;
             $mail->SMTPAuth = true;
             $mail->Username = "venirfiesta2023@gmail.com";
-            $mail->Password = "ocqjvrmbnlysralq";
+            $mail->Password = "fokuzzvlpbdlqwed";
             $mail->setFrom('venirfiesta2023@gmail.com', 'Fiesta');
             $mail->addReplyTo('venirfiesta2023@gmail.com', 'Fiesta');
             $mail->addAddress($email, 'User');
