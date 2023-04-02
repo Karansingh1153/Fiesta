@@ -72,7 +72,7 @@
 
     <script>
         setTimeout(function() {
-            window.location.href = "index.php";
+            window.location.href = "http://localhost";
         }, 10000);
         window.history.replaceState({}, "", "index.php");
     </script>
