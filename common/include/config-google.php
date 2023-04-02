@@ -2,7 +2,7 @@
 session_start();
 
 //Include Google Client Library for PHP autoload file
-require_once './common/google/vendor/autoload.php';
+require_once 'common/google/vendor/autoload.php';
 
 //Make object of Google API Client for call Google API
 $google_client = new Google\Client();

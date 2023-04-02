@@ -11,12 +11,15 @@
 .login {
   text-align: center;
   padding-bottom: 1rem;
+  font-weight: 600;
+  color: var(--extraFourth);
+  letter-spacing: 0.1rem;
   font-family: "Mukta Vaani", sans-serif;
 }
 
 form {
   border-radius: 5px;
-  box-shadow: 5px 5px 6px #d0d0d0, -5px -5px 6px #f0f0f0;
+  box-shadow: 5px 5px 20px #d0d0d0, -5px -5px 20px #f0f0f0;
 }
 
 input[type="text"] {
@@ -71,7 +74,8 @@ input[type="submit"]:active {
 
 input::placeholder {
   transition: ease all 0.5s;
-  color: var(--extraFourth);
+  color: var(--extraSixth);
+  font-weight: 600;
   -webkit-transition: ease all 0.5s;
   -moz-transition: ease all 0.5s;
 }
@@ -126,18 +130,50 @@ input:hover::placeholder {
   align-items: center;
   color: var(--extraFourth);
   border: none;
-  width: 50%;
   background-color: white;
   padding: 0.6rem 0rem;
   border-bottom: 2px solid white;
   transition: ease all 0.5s;
+  gap: 1rem;
 }
 
-.role:nth-child(1){
+.role label:hover {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px var(--extraFourth);
+  border-radius: 100%;
+  width: 1rem;
+  height: 1rem;
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--orange);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.role:nth-child(1) {
   border-top-left-radius: 5px;
 }
 
-.role:nth-child(2){
+.role:nth-child(2) {
   border-top-right-radius: 5px;
 }
-

@@ -67,10 +67,6 @@ $login_fb = '<a href="./common/include/config-facebook.php" class="mx-2" id="fac
             <div class="row my-auto">
                 <div class="col-md-4 mx-auto">
                     <form action="./loginBack.php" method="post">
-                        <span class="d-flex justify-content-center align-items-center">
-                            <button id="guest" class="role" type="submit" name="guest" onclick="setRoleGuest();">Guest</button>
-                            <button id="organizer" class="role" type="submit" name="organizer" onclick="setRoleOrganizer();">Organizer</button>
-                        </span>
                         <div class="py-4 px-5">
                             <h2 class="login" id="loginText">LogIn</h2>
                             <?php
@@ -109,30 +105,3 @@ $login_fb = '<a href="./common/include/config-facebook.php" class="mx-2" id="fac
 <?php
 include('./common/include/scripts.php');
 ?>
-
-<script>
-    const organizer = document.getElementById("organizer");
-    const guest = document.getElementById("guest");
-    const loginText = document.getElementById("loginText");
-
-    function setRoleGuest() {
-        guest.style.borderBottom = "2px solid orange";
-        organizer.setAttribute.name = "guest";
-        organizer.style.borderBottom = "2px solid white";
-        loginText.innerHTML = "Guest Login";
-    }
-
-    function setRoleOrganizer() {
-        guest.style.borderBottom = "2px solid white";
-        organizer.style.borderBottom = "2px solid orange";
-        guest.setAttribute.name = "organizer";
-        loginText.innerHTML = "Organizer Login";
-    }
-
-    guest.addEventListener("click", function(event) {
-        event.preventDefault();
-    });
-    organizer.addEventListener("click", function(event) {
-        event.preventDefault();
-    });
-</script>

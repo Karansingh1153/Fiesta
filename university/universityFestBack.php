@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../include/db_conn.php');
+include('../common/include/db_conn.php');
 
 if (isset($_POST['festname'])) {
     function validate($data)
@@ -19,5 +19,5 @@ $sql = "CREATE TABLE `$festname` (`id` INT(255) NOT NULL AUTO_INCREMENT , `event
 $result = mysqli_query($conn, $sql);
 if ($result) {
     $_SESSION['festname'] = $festname;
-    header('Location: organizer.php');
+    header('Location: ../organizer/organizer.php');
 }

@@ -67,7 +67,7 @@
 <body>
     <div class="container">
         <img src="../404.jpg" />
-        <a href="index.php" class="btn" type="submit">Goto Site</a>
+        <a href="../index.php" class="btn" type="submit">Goto Site</a>
     </div>
 
     <script>

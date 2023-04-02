@@ -20,19 +20,11 @@ include('./common/include/loading.php');
                         <?php
                         if (!isset($_GET['verifiy'])) {
                         ?>
-                            <span class="d-flex justify-content-center align-items-center">
-                                <button id="guest" class="role" type="submit" name="guest">Guest</button>
-                                <button id="organizer" class="role" type="submit" name="organizer">Organizer</button>
-                            </span>
-                            <h2 class="sign-up">SignUp</h2>
+                            <h2 class="sign-up pt-4">SignUp</h2>
 
                         <?php
                         } else {
                         ?>
-                            <span class="d-flex justify-content-center align-items-center">
-                                <button id="guest" class="role" type="submit" name="guest">Guest</button>
-                                <button id="organizer" class="role" type="submit" name="organizer">Organizer</button>
-                            </span>
                             <h2 class="sign-up">Verification</h2>
                         <?php
                         }
@@ -53,10 +45,16 @@ include('./common/include/loading.php');
                                 <input type="email" class="my-3 w-100" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Email">
                                 <input type="password" name="password" id="password" class="w-100" required placeholder="Password">
                                 <input type="password" class="my-3 w-100" name="cpassword" required id="cpassword" placeholder="Confirm Password">
+                                <div class="role">
+                                    <input type="radio" name="role" value="invitee" id="invitee">
+                                    <label for="invitee">Invitee</label>
+                                    <input type="radio" name="role" value="organizer" id="organizer">
+                                    <label for="organizer">Organizer</label>
+                                </div>
                                 <div class="mx-auto d-flex justify-content-center">
                                     <button class="btn my-3" type="submit">Signup</button>
                                 </div>
-                                <a class="d-flex justify-content-center mt-3 same-a" href="login.php">Already have account? Login</a>
+                                <a class="d-flex justify-content-center mt-3 pb-2 same-a" href="login.php">Already have account? Login</a>
                             </div>
                         <?php
                         } else {
