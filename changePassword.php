@@ -1,6 +1,6 @@
 <?php
-include('./common/include/head.php');
-include('./common/include/loading.php');
+include('./include/head.php');
+include('./include/loading.php');
 ?>
 
 <div class="load">

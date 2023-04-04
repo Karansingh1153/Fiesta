@@ -1,8 +1,8 @@
 <?php
-include('./common/include/db_conn.php');
-include('./common/include/loading.php');
-include('./common/include/head.php');
-include('./common/include/config-google.php');
+include('./include/db_conn.php');
+include('./include/loading.php');
+include('./include/head.php');
+include('./include/config-google.php');
 // include('./include/config-facebook.php');
 
 if (isset($_SESSION['username'])) {
@@ -59,7 +59,7 @@ if (isset($_GET["code"])) {
 }
 
 $login_google = '<a href="' . $google_client->createAuthUrl() . '" class="mx-2"><i class="bi bi-google" id="google"></i></a>';
-$login_fb = '<a href="./common/include/config-facebook.php" class="mx-2" id="facebook"><i class="bi bi-facebook"></i></a>';
+$login_fb = '<a href="./include/config-facebook.php" class="mx-2" id="facebook"><i class="bi bi-facebook"></i></a>';
 ?>
 <div class="load">
     <div class="form">
@@ -103,5 +103,5 @@ $login_fb = '<a href="./common/include/config-facebook.php" class="mx-2" id="fac
 </div>
 
 <?php
-include('./common/include/scripts.php');
+include('./include/scripts.php');
 ?>

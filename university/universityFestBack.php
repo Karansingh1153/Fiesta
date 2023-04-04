@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('./include/db_conn.php');
+include('../include/db_conn.php');
 
 if (isset($_POST['festname'])) {
     function validate($data)

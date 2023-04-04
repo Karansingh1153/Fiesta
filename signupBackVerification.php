@@ -15,7 +15,7 @@ if (isset($_POST['verification'])) {
         $sql = "INSERT INTO `users` (`username`, `email`, `password`, `role`) VALUES ('" . $uname . "', '" . $email . "', '" . $pass . "','" . $role . "')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            header('Location: localhost/wb/login.php');
+            header('Location: login.php');
         }
     } else {
         header('Location: signup.php?error="Invalid Verification Code"');

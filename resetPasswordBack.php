@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./common/include/db_conn.php";
+include "./include/db_conn.php";
 
 if (isset($_POST['newpassword']) && isset($_POST['cnewpassword'])) {
     function validate($data)

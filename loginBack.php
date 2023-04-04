@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_POST['submit'])){
-    include('./common/include/db_conn.php');
+    include('./include/db_conn.php');
 
     if (isset($_SESSION['username'])) {
         header('Location: index.php');
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
             } else {
                 if ($row['role'] == 'organizer')
                     header("Location: organizer/organizer.php");
-                if ($row['role'] == 'guest') {
+                if ($row['role'] == 'invitee') {
                     header('Location: index.php');
                 }
             }

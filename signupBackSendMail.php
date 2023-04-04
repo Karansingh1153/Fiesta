@@ -2,18 +2,18 @@
 
 session_start();
 
-include "./common/include/db_conn.php";
+include "./include/db_conn.php";
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'common/PHPMailer-master/src/Exception.php';
-require 'common/PHPMailer-master/src/PHPMailer.php';
-require 'common/PHPMailer-master/src/SMTP.php';
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
 
 
-require 'common/PHPMailer-master/vendor/autoload.php';
+require 'PHPMailer-master/vendor/autoload.php';
 
 function validate($data)
 {
