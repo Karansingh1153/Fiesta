@@ -162,7 +162,7 @@ p {
 .card {
   border: none;
   border-radius: 8px;
-  box-shadow: 2px 2px 10px var(--orangeExtraLight), -2px -2px 10px #ededed;
+  box-shadow: 5px 5px 20px #d0d0d0, -5px -5px 20px #f0f0f0;
   transition: ease all 0.6s;
 }
 

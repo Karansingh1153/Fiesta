@@ -29,6 +29,7 @@ if(isset($_POST['submit'])){
         $check = password_verify($pass, $epass);
         if ($row['email'] === $email && $check) {
             $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['id'];
             $_SESSION['logged_in'] = true;
             if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {

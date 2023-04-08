@@ -1,10 +1,10 @@
 <?php
-$shost = "localhost";
-$sname = "root";
-$spass = "";
+$host = "localhost";
+$name = "root";
+$pass = "";
 $dbname = "fiesta";
 
-$conn = mysqli_connect($shost, $sname, $spass, $dbname);
+$conn = mysqli_connect($host, $name, $pass, $dbname);
 
 if (!$conn) {
     die("Error : " . mysqli_connect_error());

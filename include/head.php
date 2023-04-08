@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../assets/css/contact.css" />
     <link rel="stylesheet" href="../assets/css/review.css" />
     <link rel="stylesheet" href="../assets/css/organizer.css" />
+    <link rel="stylesheet" href="../assets/css/selectservice.css" />
     <link rel="stylesheet" href="../assets/css/university.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">

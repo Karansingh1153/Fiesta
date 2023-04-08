@@ -77,7 +77,7 @@
                                                         </li>
                                                         <li class="drop-list">
                                                             <p class="drop">
-                                                                <a href="logout.php" style="text-decoration:none; color:#ffa502"><i class="bi bi-box-arrow-right"></i>
+                                                                <a href="../logout.php" style="text-decoration:none; color:#ffa502"><i class="bi bi-box-arrow-right"></i>
                                                                     Logout
                                                                 </a>
                                                             </p>
