@@ -39,8 +39,10 @@ if (isset($_GET["code"])) {
             $_SESSION['id'] = $userdata['id'];
             $_SESSION['email'] = $userdata['email'];
             if ($userdata['role'] == 'organizer')
-                header("Location: organizer/organizer.php");
+                $_SESSION['role'] = $userdata['role'];
+            header("Location: organizer/organizer.php");
             if ($userdata['role'] == 'invitee') {
+                $_SESSION['role'] = $userdata['role'];
                 header('Location: index.php');
             }
         } else {
@@ -54,8 +56,10 @@ if (isset($_GET["code"])) {
                     $_SESSION['email'] = $userinfo['email'];
                     $token = $userinfo['token'];
                     if ($role == 'organizer')
-                        header("Location: organizer/organizer.php");
+                        $_SESSION['role'] = $role;
+                    header("Location: organizer/organizer.php");
                     if ($role == 'invitee') {
+                        $_SESSION['role'] = $role;
                         header('Location: index.php');
                     }
                 } else {

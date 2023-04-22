@@ -43,23 +43,38 @@ if (isset($_POST['updateEvent'])) {
 
 <div class="load">
     <?php include('../include/header.php'); ?>
-    <div class="row mx-auto festEvents" id="festEvents">
+    <div class="row mx-auto updateFest" id="updateFest">
         <h1 class="text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">Update Event</h1>
         <div class="col-md-10 mx-auto">
             <form action="" method="POST">
-                <div class="row mx-auto festEvents-col-reverse my-5">
-                    <div class="col-12 col-md-12 col-lg-6 festEvents-content" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="row mx-auto updateFest-col-reverse my-5">
+                    <div class="col-12 col-md-12 col-lg-6 updateFest-content" data-aos="zoom-in-up" data-aos-duration="1000">
                         <div class="py-4 px-5">
-                            <input type="text" class="w-100 my-2" id="eventId" name="eventId" value="<?php echo $eventId; ?>" readonly>
-                            <input type="text" class="w-100 my-2" id="eventName" name="eventName" value="<?php echo $eventName; ?>" required>
-                            <input type="text" class="w-100 my-2" id="eventFaculty" name="eventFaculty" value="<?php echo $eventFaculty; ?>" required>
+                            <div>
+                                <label for="EventId">EventId</label>
+                                <input type="text" class="w-100 my-2" id="eventId" name="eventId" value="<?php echo $eventId; ?>" readonly>
+                            </div>
+                            <div>
+                                <label for="EventName">EventName</label>
+                                <input type="text" class="w-100 my-2" id="eventName" name="eventName" value="<?php echo $eventName; ?>" required>
+                            </div>
+                            <div>
+                                <label for="EventFaculty">EventFaculty</label>
+                                <input type="text" class="w-100 my-2" id="ventFaculty" name="eventFaculty" value="<?php echo $eventFaculty; ?>" required>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6 festEvents-content" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <div class="col-12 col-md-12 col-lg-6 updateFest-content" data-aos="zoom-in-up" data-aos-duration="1000">
                         <div class="py-4 px-5">
-                            <input type="text" class="w-100 my-2" id="eventMembers" name="eventMembers" value="<?php echo $eventMembers; ?>" required>
-                            <textarea class="w-100 my-2" id="eventDescription" name="eventDescription" rows="3" required><?php echo $eventDescription; ?></textarea>
-                            <button type="submit" class="btn" name="updateEvent">Update Event</button>
+                            <div>
+                                <label for="EventMember">EventMember</label>
+                                <input type="text" class="w-100 my-2" id="eventMembers" name="eventMembers" value="<?php echo $eventMembers; ?>" required>
+                            </div>
+                            <div>
+                                <label for="EventDescription">EventDescription</label>
+                                <textarea class="w-100 my-2" id="eventDescription" name="eventDescription" rows="3" required><?php echo $eventDescription; ?></textarea>
+                            </div>
+                            <button type="submit" class="btn w-100" name="updateEvent">Update Event</button>
                         </div>
                     </div>
                 </div>

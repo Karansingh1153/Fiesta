@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../assets/css/selectService.css" />
     <link rel="stylesheet" href="../assets/css/university.css" />
     <link rel="stylesheet" href="../assets/css/fest-event.css" />
+    <link rel="stylesheet" href="../assets/css/update-fest.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
