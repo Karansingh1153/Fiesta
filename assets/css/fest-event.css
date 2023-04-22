@@ -1,6 +1,6 @@
 @import url("./global.css");
 
-.universityFest {
+.festEvents {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -8,14 +8,14 @@
   align-items: center;
 }
 
-.universityFest form {
+.festEvents form {
   box-shadow: none;
 }
 
-.universityFest form input {
+.festEvents form input, .festEvents textarea {
   background: rgba(255, 255, 255, 0.41);
   border: 2px solid white;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.12);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.09);
   backdrop-filter: blur(6px);
   border-radius: 7px;
   transition: all 0.5s;
@@ -26,7 +26,12 @@
   overflow: hidden;
 }
 
-.universityFest form input::placeholder {
+.festEvents form input::placeholder {
+  color: #777;
+  letter-spacing: 0.08rem;
+}
+
+.festEvents textarea::placeholder {
   color: #777;
   letter-spacing: 0.08rem;
 }

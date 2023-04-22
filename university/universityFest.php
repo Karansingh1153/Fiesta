@@ -11,10 +11,10 @@ include('../include/loading.php');
     <?php
     include('../include/header.php');
     ?>
-    <div class="row mx-auto universityfest">
+    <div class="row mx-auto universityFest">
         <div class="col-md-10 mx-auto">
-            <div class="row mx-auto universityfest-col-reverse">
-                <div class="col-12 col-md-12 col-lg-6 universityfest-content">
+            <div class="row mx-auto universityFest-col-reverse">
+                <div class="col-12 col-md-12 col-lg-6 universityFest-content">
                     <form action="universityFestBack.php" method="post">
                         <div class="py-4 px-5">
                             <?php
@@ -24,7 +24,7 @@ include('../include/loading.php');
                                     <p class="error text-center"><?php echo $_GET['error']; ?></p>
                                 </div>
                             <?php } ?>
-                            <input type="text" name="festname" id="festname" pattern="[A-Za-z0-9_]{2,20}" class="w-100 my-4" required placeholder="Enter Fest Name ...">
+                            <input type="text" name="festName" id="festName" pattern="[A-Za-z0-9_]{2,20}" class="w-100 my-4" required placeholder="Enter Fest Name ...">
                             <div class="mx-auto d-flex justify-content-center">
                                 <button class="btn my-2" type="submit">Create</button>
                             </div>

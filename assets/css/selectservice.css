@@ -5,13 +5,13 @@
   height: 80vh;
 }
 
-.organizer-card {
+.selectService-card {
   box-sizing: border-box;
   width: 190px;
   height: 254px;
-  background: rgba(217, 217, 217, 0.41);
+  background: rgba(255, 255, 255, 0.41);
   border: 2px solid white;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(6px);
   border-radius: 17px;
   text-align: center;
@@ -26,16 +26,16 @@
   overflow: hidden;
 }
 
-.organizer-card:hover {
+.selectService-card:hover {
   border: 2px solid var(--orangeExtraDark);
   transform: scale(1.10);
 }
 
-.organizer-card:active {
+.selectService-card:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
 
-.organizer-card a {
+.selectService-card a {
   text-decoration: none;
   color: var(--orange);
   letter-spacing: 0.07rem;

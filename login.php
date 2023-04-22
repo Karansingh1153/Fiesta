@@ -1,7 +1,7 @@
 <?php
+include('./include/head.php');
 include('./include/db_conn.php');
 include('./include/loading.php');
-include('./include/head.php');
 include('./include/config-google.php');
 // include('./include/config-facebook.php');
 
@@ -37,17 +37,32 @@ if (isset($_GET["code"])) {
             $token = $userdata['token'];
             $_SESSION['username'] = $userdata['full_name'];
             $_SESSION['id'] = $userdata['id'];
-            header("Location: index.php");
+            $_SESSION['email'] = $userdata['email'];
+            if ($userdata['role'] == 'organizer')
+                header("Location: organizer/organizer.php");
+            if ($userdata['role'] == 'invitee') {
+                header('Location: index.php');
+            }
         } else {
-            $sql = "INSERT INTO `google_users` (`email`, `first_name`, `last_name`, `gender`, `full_name`, `picture` ,`verified_email`, `token`) VALUES ('{$userinfo['email']}','{$userinfo['first_name']}','{$userinfo['last_name']}','{$userinfo['gender']}','{$userinfo['full_name']}','{$userinfo['picture']}','{$userinfo['verified_email']}','{$userinfo['token']}')";
-            $result = mysqli_query($conn, $sql);
-            if ($result) {
-                $_SESSION['username'] = $userinfo['full_name'];
-                $_SESSION['id'] = $userinfo['id'];
-                $token = $userinfo['token'];
-                header("Location: index.php");
+            if (!empty($_COOKIE['role'])) {
+                $role = $_COOKIE['role'];
+                $sql = "INSERT INTO `google_users` (`email`, `first_name`, `last_name`, `full_name`, `picture` ,`verified_email`, `token`, `role`) VALUES ('{$userinfo['email']}', '{$userinfo['first_name']}', '{$userinfo['last_name']}', '{$userinfo['full_name']}', '{$userinfo['picture']}', '{$userinfo['verified_email']}', '{$userinfo['token']}', '$role')";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    $_SESSION['username'] = $userinfo['full_name'];
+                    $_SESSION['id'] = $userinfo['id'];
+                    $_SESSION['email'] = $userinfo['email'];
+                    $token = $userinfo['token'];
+                    if ($role == 'organizer')
+                        header("Location: organizer/organizer.php");
+                    if ($role == 'invitee') {
+                        header('Location: index.php');
+                    }
+                } else {
+                    header('Location: login.php?error=Try again later');
+                }
             } else {
-                header('Location: login.php?error=Try again later');
+                header('Location: login.php?error=Please select a role');
             }
         }
         $_SESSION['google_access_token'] = $token;
@@ -83,8 +98,14 @@ $login_fb = '<a href="./include/config-facebook.php" class="mx-2" id="facebook">
                             </div>
                             <div class="other-login d-flex align-items-center text-center justify-content-center">
                                 <hr style="width: 5vw;">
-                                <p class="text-center mx-3 my-4">OR</p>
+                                <p class="text-center mx-3 mt-3">OR</p>
                                 <hr style="width: 5vw;">
+                            </div>
+                            <div class="role mb-3">
+                                <input type="radio" name="role" value="invitee" id="invitee">
+                                <label for="invitee">Invitee</label>
+                                <input type="radio" name="role" value="organizer" id="organizer">
+                                <label for="organizer">Organizer</label>
                             </div>
                             <div class="login_extra text-center">
                                 <?php
@@ -101,6 +122,18 @@ $login_fb = '<a href="./include/config-facebook.php" class="mx-2" id="facebook">
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("invitee").addEventListener("change", function() {
+        var value = document.querySelector('input[name="role"]:checked').value;
+        document.cookie = "role=invitee";
+    });
+
+    document.getElementById("organizer").addEventListener("change", function() {
+        var value = document.querySelector('input[name="role"]:checked').value;
+        document.cookie = "role=organizer";
+    });
+</script>
 
 <?php
 include('./include/scripts.php');
