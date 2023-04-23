@@ -18,7 +18,9 @@ $userId = $_SESSION['id'];
 $userName = $_SESSION['username'];
 $userEmail = $_SESSION['email'];
 
-$sql1 = "INSERT INTO `fests` (`userId`, `festName`, `userName`, `userEmail`) VALUES ('" . $userId . "', '" . $festName . "', '" . $userName . "','" . $userEmail . "')";
+$festId = mt_rand(100000, 99999999);
+
+$sql1 = "INSERT INTO `fests` (`userId`, `festName`, `festId`, `userName`, `userEmail`) VALUES ('" . $userId . "', '" . $festName . "', '" . $festId . "', '" . $userName . "','" . $userEmail . "')";
 
 $sql = "CREATE TABLE `$festName` (`id` INT(255) NOT NULL AUTO_INCREMENT, `eventId` INT(255) NOT NULL, `eventName` VARCHAR(100) NOT NULL , `eventDescription` VARCHAR(100) NOT NULL, `eventFaculty` VARCHAR(100) NOT NULL, `eventMembers` INT(255) NOT NULL , PRIMARY KEY (`id`))";
 

@@ -30,6 +30,7 @@ if (!isset($_GET['id'])) {
         $eventId = $row['eventId'];
         // handle form submission
     }
+
     if (isset($_POST['register'])) {
         // retrieve form data
         $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -38,8 +39,11 @@ if (!isset($_GET['id'])) {
         $dob = mysqli_real_escape_string($conn, $_POST['dob']);
         $department = mysqli_real_escape_string($conn, $_POST['department']);
 
+        // generate unique volunteer ID
+        $volunteerId = mt_rand(100000, 999999);
+
         // insert data into database
-        $query = "INSERT INTO `registrations` (`eventId`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $eventId . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
+        $query = "INSERT INTO `volunteers` (`eventId`, `volunteerId`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $eventId . "','" . $volunteerId . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
         $result = mysqli_query($conn, $query);
         if ($result) {
             // registration successful
@@ -56,7 +60,7 @@ if (!isset($_GET['id'])) {
     <div class="row mx-auto registerFest" id="registerFest">
         <h1 class="text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">Register Event</h1>
         <div class="col-md-10 mx-auto">
-            <form <?php echo "action=register.php?id=" . $id . "&&fest=" . $festName . "" ?> method="POST">
+            <form <?php echo "action=register-volunteer.php?id=" . $id . "&&fest=" . $festName . "" ?> method="POST">
                 <div class="row mx-auto registerFest-col-reverse my-5">
                     <div class="col-12 col-md-12 col-lg-6 registerFest-content" data-aos="zoom-in-up" data-aos-duration="1000">
                         <div class="px-5">

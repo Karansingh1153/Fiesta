@@ -27,7 +27,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         echo "<p class='card-text'>" . $eventRow['eventDescription'] . "</p>";
                         echo "<div class='d-flex justify-content-center align-items-center' style='gap:0.5rem'>";
                         echo "<a href='./invitee/register.php?id=" . $eventRow['id'] . "&&fest=" . $festName . "' class='btn px-4'>Register</a>";
-                        echo "<a href='register.php?id=" . $eventRow['id'] . "&&fest=" . $festName . "' class='btn-v px-4'>Volunteer</a>";
+                        echo "<a href='./invitee/register-volunteer.php?id=" . $eventRow['id'] . "&&fest=" . $festName . "' class='btn-v px-4'>Volunteer</a>";
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";

@@ -3,7 +3,7 @@ session_start();
 
 include('../include/db_conn.php');
 
-$tableName = $_SESSION['festName'];
+$tableName = $_GET['festName'];
 if (isset($_POST['delete'])) {
     $id = $_GET['id'];
     $sql = "DELETE FROM `$tableName` WHERE id = $id";
