@@ -11,6 +11,12 @@ include('./include/loading.php');
   <?php
   include('./include/header.php');
   include('./include/home.php');
+
+  if (session_id()) {
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'invitee') {
+      include('./invitee/show.php');
+    }
+  }
   include('./include/gallery.php');
   include('./include/service.php');
   include('./include/pricing.php');

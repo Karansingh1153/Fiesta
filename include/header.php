@@ -22,6 +22,17 @@
                                     <li class="nav-item">
                                         <a class="nav-link" data-name="Gallery" href="#gallery">Gallery</a>
                                     </li>
+                                    <?php
+                                    if (session_id()) {
+                                        if (isset($_SESSION['role']) && $_SESSION['role'] == 'invitee') {
+                                    ?>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-name="Events" href="#events">Events</a>
+                                            </li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                     <li class="nav-item">
                                         <a class="nav-link" data-name="Services" href="#service">Services</a>
                                     </li>

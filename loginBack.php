@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     include('./include/db_conn.php');
 
     if (isset($_SESSION['username'])) {
         header('Location: index.php');
     }
-    
+
     if (isset($_POST['email']) && isset($_POST['password'])) {
         function validate($data)
         {
@@ -17,10 +17,10 @@ if(isset($_POST['submit'])){
             return $data;
         }
     }
-    
+
     $email = validate($_POST['email']);
     $pass = validate($_POST['password']);
-    
+
     $sql = "SELECT * FROM `users` WHERE `email` = '$email'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) === 1) {
@@ -35,9 +35,12 @@ if(isset($_POST['submit'])){
             if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 exit;
             } else {
-                if ($row['role'] == 'organizer')
+                if ($row['role'] == 'organizer') {
+                    $_SESSION['role'] = $row['role'];
                     header("Location: organizer/organizer.php");
+                }
                 if ($row['role'] == 'invitee') {
+                    $_SESSION['role'] = $row['role'];
                     header('Location: index.php');
                 }
             }
@@ -51,8 +54,6 @@ if(isset($_POST['submit'])){
         header("Location: login.php?error=Incorrect email or password");
         exit();
     }
-}
-else{
+} else {
     header('Location: login.php');
 }
-
