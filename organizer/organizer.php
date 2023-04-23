@@ -8,16 +8,20 @@ include('../include/header.php');
 ?>
 
 <div class="load">
+    <div class="container my-5 d-flex justify-content-center align-items-center" style="gap:1rem;">
+        <a href="generateExcelParticipants.php" class="btn">Excel Participant</a>
+        <a href="generateExcelVolunteer.php" class="btn">Excel Volunteer</a>
+    </div>
     <?php
-    include('users.php');
-
     $id = $_SESSION['id'];
     $query = "SELECT * FROM `fests` WHERE `userId` = '$id'";
     $result = mysqli_query($conn, $query);
+    echo "<h1 class='text-center mt-5 my-2'>Events</h1>";
+    echo "<center><hr class='w-50'/></center>";
     if ($result && mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             $festName = $row['festName'];
-            echo "<h1 align='center'>$festName</h1>";
+            echo "<h2 align='center'>$festName</h2>";
             if ($festName) {
 
                 $query = "SELECT * FROM `$festName`";
@@ -73,6 +77,7 @@ include('../include/header.php');
     }
     ?>
     <?php
+    include('users.php');
     include('../include/footer.php');
     include('../include/scripts.php');
     ?>

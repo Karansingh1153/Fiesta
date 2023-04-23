@@ -2,17 +2,18 @@
 $id = $_SESSION['id'];
 $query = "SELECT * FROM `fests` WHERE `userId` = '$id'";
 $result = mysqli_query($conn, $query);
+echo "<h1 class='text-center mt-5 my-2'>Participants</h1>";
+echo "<center><hr class='w-50'/></center>";
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $festName = $row['festName'];
-        echo "<h1 align='center'>$festName</h1>";
         if ($festName) {
             // Display registrations table data
             $query = "SELECT * FROM `registrations` WHERE `festName` = '$festName'";
             $regResult = mysqli_query($conn, $query);
             if (mysqli_num_rows($regResult) > 0) {
-                echo "<h2 align='center'>Registrations</h2>";
-                echo "<table class='table table-striped table-hover'>";
+                echo "<h3 align='center'>" . $festName . " Registrations</h3>";
+                echo "<table class='table table-striped table-hover w-100 my-5'>";
                 echo "<thead class='text-center'>";
                 echo "<tr>";
                 echo "<th scope='col'>ID</th>";
@@ -50,8 +51,8 @@ if ($result && mysqli_num_rows($result) > 0) {
             $query = "SELECT * FROM `volunteers` WHERE `festName` = '$festName'";
             $regResult = mysqli_query($conn, $query);
             if (mysqli_num_rows($regResult) > 0) {
-                echo "<h2 align='center'>Volunteer</h2>";
-                echo "<table class='table table-striped table-hover'>";
+                echo "<h3 align='center'>" . $festName . " Volunteer</h3>";
+                echo "<table class='table table-striped table-hover w-100 my-5'>";
                 echo "<thead class='text-center'>";
                 echo "<tr>";
                 echo "<th scope='col'>ID</th>";
