@@ -28,6 +28,7 @@ if (!isset($_GET['id'])) {
         $row = mysqli_fetch_assoc($result);
         $eventName = $row['eventName'];
         $eventId = $row['eventId'];
+        $userId = $row['userId'];
         // handle form submission
     }
 
@@ -43,7 +44,7 @@ if (!isset($_GET['id'])) {
         $volunteerId = mt_rand(100000, 999999);
 
         // insert data into database
-        $query = "INSERT INTO `volunteers` (`eventId`, `volunteerId`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $eventId . "','" . $volunteerId . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
+        $query = "INSERT INTO `volunteers` (`userId`,`eventId`, `volunteerId`,`festName`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $userId . "','" . $eventId . "','" . $volunteerId . "','" . $festName . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
         $result = mysqli_query($conn, $query);
         if ($result) {
             // registration successful

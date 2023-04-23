@@ -27,6 +27,7 @@ if (!isset($_GET['id'])) {
     } else {
         $row = mysqli_fetch_assoc($result);
         $eventName = $row['eventName'];
+        $userId = $row['userId'];
         $eventId = $row['eventId'];
         // handle form submission
     }
@@ -39,7 +40,7 @@ if (!isset($_GET['id'])) {
         $department = mysqli_real_escape_string($conn, $_POST['department']);
 
         // insert data into database
-        $query = "INSERT INTO `registrations` (`eventId`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $eventId . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
+        $query = "INSERT INTO `registrations` (`userId`,`eventId`,`festName`, `eventName`, `name`, `enrollment`, `mobile`, `dob`, `department`) VALUES ('" . $id . "','" . $eventId . "','" . $festName . "', '" . $eventName . "', '" . $name . "','" . $enrollment . "','" . $mobile . "','" . $dob . "','" . $department . "')";
         $result = mysqli_query($conn, $query);
         if ($result) {
             // registration successful
@@ -76,9 +77,8 @@ if (!isset($_GET['id'])) {
             </form>
         </div>
     </div>
-
-    <?php
-    include('../include/footer.php');
-    include('../include/scripts.php');
-    ?>
 </div>
+<?php
+include('../include/footer.php');
+include('../include/scripts.php');
+?>

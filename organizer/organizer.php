@@ -9,7 +9,7 @@ include('../include/header.php');
 
 <div class="load">
     <?php
-    // include('users.php');
+    include('users.php');
 
     $id = $_SESSION['id'];
     $query = "SELECT * FROM `fests` WHERE `userId` = '$id'";
@@ -72,8 +72,8 @@ include('../include/header.php');
         header('Location: selectService.php');
     }
     ?>
+    <?php
+    include('../include/footer.php');
+    include('../include/scripts.php');
+    ?>
 </div>
-<?php
-include('../include/footer.php');
-include('../include/scripts.php');
-?>
