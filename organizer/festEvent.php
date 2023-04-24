@@ -3,6 +3,7 @@ session_start();
 
 include('../include/db_conn.php');
 include('../include/head.php');
+include('../include/header.php');
 include('../include/loading.php');
 
 
@@ -23,19 +24,33 @@ if (isset($_POST['submit'])) {
     $eventFaculty = validate($_POST['faculty']);
     $eventDescription = validate($_POST['description']);
 
-    $tableName = $_SESSION['festName'];
-
+    if (isset($_SESSION['addEvent'])) {
+        $tableName = $_SESSION['addEvent'];
+    } else {
+        $tableName = $_SESSION['addEvent'];
+    }
     $sql = "INSERT INTO `$tableName` (`eventId`, `eventName`, `eventDescription`, `eventFaculty`, `eventMembers`) VALUES ('" . $eventId . "','" . $eventName . "', '" . $eventDescription . "', '" . $eventFaculty . "', '" . $eventMember . "')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        header('Location: organizer.php');
+?>
+        <script>
+            window.location.href = "http://localhost/organizer/organizer.php";
+        </script>
+    <?php
     } else {
         header('Location:organizer.php?error=Something went wrong');
     }
 }
 
-if (isset($_SESSION['festName'])) {
-?>
+if (isset($_SESSION['festName']) || isset($_GET['festName'])) {
+    if (isset($_SESSION['festName'])) {
+        $festName = $_SESSION['festName'];
+    }
+    if (isset($_GET['festName'])) {
+        $festName = $_GET['festName'];
+        $_SESSION['addEvent'] = $festName;
+    }
+    ?>
     <div class="load">
         <div class="row mx-auto festEvents" id="festEvents">
             <h1 class="text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">Add Event</h1>
@@ -65,7 +80,6 @@ if (isset($_SESSION['festName'])) {
                     </div>
                     <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-enter align-items-center" data-aos="zoom-in-up" data-aos-duration="1000">
                         <img src="../assets/img/event.png" class="d-block w-100" alt="Event Image">
-
                     </div>
                 </div>
             </div>

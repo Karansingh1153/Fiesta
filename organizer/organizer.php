@@ -7,11 +7,12 @@ include('../include/db_conn.php');
 include('../include/header.php');
 ?>
 
+<div class="container my-5 d-flex justify-content-center align-items-center" style="gap:1rem;">
+    <a href="generateExcelParticipants.php" class="btn">Excel Participant</a>
+    <a href="generateExcelVolunteer.php" class="btn">Excel Volunteer</a>
+    <a href="selectService.php" class="btn">Add Fests</a>
+</div>
 <div class="load">
-    <div class="container my-5 d-flex justify-content-center align-items-center" style="gap:1rem;">
-        <a href="generateExcelParticipants.php" class="btn">Excel Participant</a>
-        <a href="generateExcelVolunteer.php" class="btn">Excel Volunteer</a>
-    </div>
     <?php
     $id = $_SESSION['id'];
     $query = "SELECT * FROM `fests` WHERE `userId` = '$id'";
@@ -37,6 +38,18 @@ include('../include/header.php');
                                 <th scope="col">eventDescription</th>
                                 <th scope="col">eventFaculty</th>
                                 <th scope="col">eventMembers</th>
+                                <?php
+                                echo "<th>
+                                <form method='POST' style='box-shadow: none;' action='festEvent.php?festName=" . $festName . "'>
+                                <button type='submit' class='btn' name='add-event'>Add Event</button>
+                                </form>
+                                </th>";
+                                echo "<th>
+                                <form method='POST' style='box-shadow: none;' onsubmit='return confirmDelete();' action='deleteFest.php?festName=" . $festName . "'>
+                                <button type='submit' class='btn-v' name='add-event'>Delete Fest</button>
+                                </form>
+                                </th>";
+                                ?>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -51,12 +64,12 @@ include('../include/header.php');
                                 echo "<td>" . $eventRow['eventMembers'] . "</td>";
                                 echo "<td>
                                 <form method='POST' style='box-shadow: none;' action='updateFestEvent.php?id=" . $eventRow['id'] . "&&festName=" . $festName . "'>
-                                <button type='submit' class='btn' name='update'>Update</button>
+                                <button type='submit' style='background-color:#3ae374; border:2px solid ##3ae374; color:#fff;'  class='btn' name='update'>Update</button>
                                 </form>
                             </td>";
                                 echo "<td>
-                                    <form method='POST' style='box-shadow: none;' action='deleteFestEvent.php?id=" . $eventRow['id'] . "&&festName=" . $festName . "'>
-                                    <button type='submit' class='btn-v' name='delete'>Delete</button>
+                                    <form method='POST' style='box-shadow: none;' onsubmit='return confirmDelete();' action='deleteFestEvent.php?id=" . $eventRow['id'] . "&&festName=" . $festName . "'>
+                                    <button type='submit' class='btn-v' style='background-color:#ff3838; border:2px solid #ff3838; color:#fff;' name='delete'>Delete</button>
                                     </form>
                                 </td>";
                                 echo "</tr>";
@@ -66,7 +79,7 @@ include('../include/header.php');
                     </table>
     <?php
                 } else {
-                    echo "No events found for $festName";
+                    echo "<center>No events found for .$festName.</center>";
                 }
             } else {
                 header('Location: organizer.php?error=Something went wrong.F');
@@ -79,6 +92,7 @@ include('../include/header.php');
     <?php
     include('users.php');
     include('../include/footer.php');
-    include('../include/scripts.php');
     ?>
 </div>
+<?php
+include('../include/scripts.php');

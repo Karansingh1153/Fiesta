@@ -59,4 +59,18 @@ header('Content-Disposition: attachment;filename="event_volunteer_report.xlsx"')
 header('Cache-Control: max-age=0');
 readfile($filename);
 unlink($filename);
-header("refresh:2;url=organizer.php");
+?>
+<script>
+    window.location.href = "http://localhost/organizer/organizer.php";
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
+    window.addEventListener("load", function() {
+        document.querySelector(".loading").style.visibility = "hidden";
+        document.querySelector(".load").style.overflowY = "visible";
+    });
+
+    window.addEventListener("beforeunload", function() {
+        document.querySelector(".loading").style.visibility = "visible";
+    });
+</script>

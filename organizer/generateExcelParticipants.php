@@ -57,4 +57,10 @@ header('Content-Disposition: attachment;filename="event_registration_report.xlsx
 header('Cache-Control: max-age=0');
 readfile($filename);
 unlink($filename);
-header("refresh:2;url=organizer.php");
+?>
+<script>
+    window.location.href = "http://localhost/organizer/organizer.php";
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
+</script>

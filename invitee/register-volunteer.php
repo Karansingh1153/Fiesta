@@ -28,7 +28,7 @@ if (!isset($_GET['id'])) {
         $row = mysqli_fetch_assoc($result);
         $eventName = $row['eventName'];
         $eventId = $row['eventId'];
-        $userId = $row['userId'];
+        $userId = $row['id'];
         // handle form submission
     }
 

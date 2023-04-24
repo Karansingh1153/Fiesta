@@ -28,5 +28,6 @@ $result = mysqli_query($conn, $sql);
 $result1 = mysqli_query($conn, $sql1);
 if ($result && $result1) {
     $_SESSION['festName'] = $festName;
-    header('Location: ../organizer/organizer.php');
+    header('Location: ../organizer/festEvent.php?festName='.$festName.'');
+    exit();
 }

@@ -46,7 +46,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 echo "</tbody>";
                 echo "</table>";
             } else {
-                echo "<p>No registrations found for $festName</p>";
+                echo "<center><p>No registrations found for $festName</p></center>";
             }
             $query = "SELECT * FROM `volunteers` WHERE `festName` = '$festName'";
             $regResult = mysqli_query($conn, $query);
@@ -87,7 +87,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 echo "</tbody>";
                 echo "</table>";
             } else {
-                echo "<p>No registrations found for $festName</p>";
+                echo "<center><p>No Volunteers found for $festName</p></center>";
             }
         }
     }

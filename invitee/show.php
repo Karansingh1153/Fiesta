@@ -35,7 +35,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                     }
                     echo "</div>";
                 } else {
-                    echo "No events found for $festName";
+                    echo "<center>No events found for .$festName.</center>";
                 }
             } else {
                 header('Location: index.php?error=Something went wrong.F');
