@@ -11,6 +11,7 @@ include('../include/header.php');
     <a href="generateExcelParticipants.php" class="btn">Excel Participant</a>
     <a href="generateExcelVolunteer.php" class="btn">Excel Volunteer</a>
     <a href="selectService.php" class="btn">Add Fests</a>
+    <a href="generateWord.php" class="btn">Word</a>
 </div>
 <div class="load">
     <?php

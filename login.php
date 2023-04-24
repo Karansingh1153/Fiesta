@@ -5,7 +5,7 @@ include('./include/loading.php');
 include('./include/config-google.php');
 // include('./include/config-facebook.php');
 
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['logged_in'])) {
     header('Location: index.php');
 }
 

@@ -1,7 +1,7 @@
 <?php
 include('../include/db_conn.php');
 
-require './phpoffice/vendor/autoload.php';
+require './php-excel/vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
